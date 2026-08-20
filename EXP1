@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Beauty - Beauty & Skincare Blog</title>
+</head>
+<body bgcolor="#FFF0F5">
+<!-- Header -->
+<center>
+<header id="top">
+    <h1> Glow Beauty & Skincare Blog</h1>
+    <p><b>Discover the Secret to Naturally Healthy & Radiant  Skin</b></p>
+</header>
+<!-- Navigation -->
+<nav>
+<center>
+<b>
+ <a href="#top">HOME</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#about">ABOUT</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#tips">SKINCARE TIPS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#products">PRODUCTS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#contact">CONTACT</a>
+</b>
+</center>
+</nav>
+</center>
+<!-- About -->
+<center>
+<section id="about">
+    <center>
+<h2>About Our Blog</h2>
+<table width="70%">
+<tr>
+<td align="center">
+<p>
+In addition to skincare, we also share wellness tips because healthy skin starts from within.
+Staying hydrated, eating a balanced diet, exercising regularly, getting enough sleep,
+and managing stress all contribute to a naturally glowing complexion.
+</p>
+<p>
+Our blog covers daily skincare routines, seasonal skincare advice, anti-aging tips,
+acne prevention, sun protection, makeup essentials, and healthy lifestyle practices.
+</p>
+</td>
+</tr>
+</table>
+</center>
+    <img src="images/beauty.jpg" alt="Beauty" width="500">
+</section>
+</center>
+<!-- Useful Links -->
+<center>
+<section>
+<h2>Useful Links</h2>
+<p>
+External Website:
+<a href="https://www.nivea.com" target="_blank">Visit NIVEA</a>
+</p>
+<p>
+Internal Link:
+<a href="#tips">Go to Skincare Tips</a>
+</p>
+<p>
+Email:
+<a href="mailto:glowbeauty@gmail.com">glowbeauty@gmail.com</a>
+</p>
+<p>
+Phone:
+<a href="tel:+917598472611">+91 7598472611</a>
+</p>
+<p><b>Clickable Image to Visit Sephora</b></p>
+<a href="https://www.sephora.com" target="_blank">
+    <img src="images/gallery2.jpg" alt="Beauty Products" width="250">
+</a>
+</section>
+</center>
+<!-- Products -->
+<center>
+<section id="products">
+<h2>Popular Skincare Products</h2>
+<table border="1" cellpadding="10" cellspacing="0">
+<tr>
+<th>Product</th>
+<th>Skin Type</th>
+<th>Benefit</th>
+</tr>
+<tr>
+<td>Cleanser</td>
+<td>All Skin Types</td>
+<td>Removes Dirt & Oil</td>
+</tr>
+<tr>
+<td>Vitamin C Serum</td>
+<td>Normal/Dry</td>
+<td>Brightens Skin</td>
+</tr>
+<tr>
+<td>Moisturizer</td>
+<td>Dry Skin</td>
+<td>Hydration</td>
+</tr>
+<tr>
+<td>Sunscreen SPF 50</td>
+<td>All Skin Types</td>
+<td>UV Protection</td>
+</tr>
+</table>
+</section>
+</center>
+<!-- Beauty Terms -->
+<center>
+<section>
+<h2>Beauty Terms</h2>
+<dl>
+<dt><b>Cleanser</b></dt>
+<dd>Removes makeup, dirt and excess oil.</dd>
+<dt><b>Toner</b></dt>
+<dd>Balances skin pH after cleansing.</dd>
+<dt><b>Serum</b></dt>
+<dd>Contains concentrated active ingredients.</dd>
+<dt><b>Moisturizer</b></dt>
+<dd>Keeps skin hydrated and soft.</dd>
+</dl>
+</section>
+</center>
+<!-- Skincare Routine -->
+<center>
+<section id="tips">
+<h2> Daily Skincare Routine </h2>
+<p>Follow these simple steps every day for healthy and glowing skin.</p>
+<center>
+<h3> Morning Routine</h3>
+<p>1. Cleanser</p>
+<p>2. Toner</p>
+<p>3. Vitamin C Serum</p>
+<p>4. Moisturizer</p>
+<p>5. Sunscreen</p>
+<h3> Night Routine</h3>
+<p>1. Cleanser</p>
+<p>2. Serum</p>
+<p>3. Night Cream</p>
+</center>
+</section>
+</center>
+<!-- Beauty Gallery Section -->
+<center>
+<h2> Beauty Gallery </h2>
+<p>Explore some of our favorite skincare and beauty inspirations.</p>
+<table cellpadding="10">
+    <tr>
+        <td align="center">
+            <img src="images/serum.jpg" alt="Serum" width="200"><br>
+            <b>SERUM</b>
+        </td>
+        <td align="center">
+            <img src="images/wash.jpg" alt="Face Wash" width="200"><br>
+            <b>Face Wash</b>
+        </td>
+        <td align="center">
+            <img src="images/moist.jpg" alt="Moisturizer" width="200"><br>
+            <b>Moisturizer</b>
+        </td>
+        <td align="center">
+            <img src="images/sun.jpg" alt="Sun Screen" width="200"><br>
+            <b>Sunscreen SPF 50</b>
+        </td>
+        <td align="center">
+            <img src="images/lip.jpg" alt="Lip Balm" width="200"><br>
+            <b>Lip Balm</b>
+        </td>
+    </tr>
+</table>
+</center>
+<!-- Quick Tips -->
+<center>
+<h2>Quick Beauty Tips</h2>
+<p> Drink at least 8 glasses of water daily.</p>
+<p> Always wear sunscreen before stepping outside.</p>
+<p> Eat fresh fruits and vegetables for healthy skin.</p>
+</center>
+<!-- Natural Ingredients -->
+<!-- Natural Ingredients -->
+<center>
+
+<h2>Natural Ingredients</h2>
+<table cellpadding="10">
+    <tr>
+        <td align="center">
+            <img src="images/honey.jpg" alt="Honey" width="200"><br>
+            <b>HONEY</b>
+        </td>
+
+        <td align="center">
+            <img src="images/turmeric.jpg" alt="Turmeric Powder" width="200"><br>
+            <b>TURMERIC POWDER</b>
+        </td>
+
+        <td align="center">
+            <img src="images/aloevera.jpg" alt="Aloe Vera" width="200"><br>
+            <b>ALOE VERA</b>
+        </td>
+
+        <td align="center">
+            <img src="images/r.jpg" alt="Rice Water" width="200"><br>
+            <b>RICE WATER</b>
+        </td>
+        <td align="center">
+            <img src="images/sand.jpg" alt="Sandal Wood" width="200"><br>
+            <b>SANDAL WOOD</b>
+        </td>
+    </tr>
+</table>
+
+</center>
+</center>
+<!-- Contact -->
+<center>
+<section id="contact">
+<h2>Contact Us</h2>
+<p>We'd love to hear your skincare journey!</p>
+<p>
+Email:
+<a href="mailto:glowbeauty@gmail.com">glowbeauty@gmail.com</a>
+</p>
+<p>
+Phone:
+<a href="tel:+917598472611">+91 7598472611</a>
+</p>
+</section>
+<footer>
+<p>&copy; 2026 Glow Beauty & Skincare Blog |Designed By GOLDY </p>
+</footer>
+</center>
+</body>
+</html>
