@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Beauty - JavaScript DOM & Events</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    min-height:100vh;
+    color:#30243d;
+    background:linear-gradient(135deg,#c4b5fd,#e9d5ff,#bbf7d0,#86efac);
+    background-attachment:fixed;
+    padding-bottom:60px;
+}
+header{
+    text-align:center;
+    color:white;
+    padding:65px 20px 50px;
+}
+header h1{
+    font-size:50px;
+    margin-bottom:12px;
+    text-shadow:0 4px 15px rgba(50,20,80,.25);
+}
+header p{
+    font-size:18px;
+}
+.logo{
+    font-size:55px;
+    margin-bottom:10px;
+}
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+.card{
+    background:rgba(255,255,255,.95);
+    margin:30px 0;
+    padding:34px;
+    border-radius:28px;
+    box-shadow:0 25px 60px rgba(40,20,70,.20);
+}
+.card-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:20px;
+}
+.number{
+    width:55px;
+    height:55px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:21px;
+    font-weight:800;
+    background:linear-gradient(135deg,#7c3aed,#a855f7);
+}
+.card h2{
+    color:#4c2870;
+    font-size:27px;
+}
+.description{
+    color:#756b80;
+    line-height:1.7;
+    margin-bottom:23px;
+}
+label{
+    display:block;
+    color:#51445d;
+    font-weight:650;
+    margin-bottom:6px;
+}
+input,select{
+    width:100%;
+    padding:15px 17px;
+    margin:7px 0 17px;
+    border:2px solid #e9def1;
+    border-radius:14px;
+    background:#fcfaff;
+    font-size:15px;
+    outline:none;
+}
+input:focus,select:focus{
+    border-color:#a855f7;
+}
+button{
+    border:none;
+    padding:14px 27px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#a855f7);
+    color:white;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(124,58,237,.25);
+}
+.result{
+    margin-top:22px;
+    padding:18px 20px;
+    border-radius:15px;
+    background:#f5efff;
+    border-left:5px solid #8b5cf6;
+    color:#514267;
+    font-weight:650;
+    line-height:1.8;
+}
+.two-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+.skin-result{
+    margin-top:23px;
+    padding:30px;
+    text-align:center;
+    border-radius:20px;
+    background:linear-gradient(135deg,#f5efff,#ecfdf5);
+}
+.skin-number{
+    font-size:44px;
+    font-weight:850;
+    color:#7c3aed;
+    margin:8px 0;
+}
+.skin-type{
+    font-size:21px;
+    font-weight:750;
+    color:#6d28d9;
+}
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+.product-item{
+    padding:23px;
+    border-radius:19px;
+    background:#faf7ff;
+    border:1px solid #eee3f8;
+    text-align:center;
+}
+.product-icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+.product-item h3{
+    color:#713f8d;
+    margin-bottom:9px;
+}
+.product-item p{
+    color:#766b80;
+    line-height:1.6;
+}
+.budget-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+.budget-result{
+    margin-top:25px;
+    padding:27px;
+    border-radius:20px;
+    text-align:center;
+    font-size:30px;
+    font-weight:850;
+    color:#51366b;
+    background:#f4efff;
+}
+.routine-area{
+    text-align:center;
+}
+.routine-icon{
+    font-size:90px;
+    margin:15px;
+    transition:.4s;
+}
+.routine-result{
+    margin-top:22px;
+    padding:25px;
+    border-radius:20px;
+    background:#f4efff;
+    color:#553b6c;
+    font-size:20px;
+    font-weight:750;
+}
+.routine-count{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:28px;
+}
+.count-box{
+    min-width:170px;
+    padding:22px 35px;
+    border-radius:20px;
+    background:#f8f4ff;
+    color:#58456a;
+    font-weight:700;
+}
+.count-box span{
+    display:block;
+    font-size:36px;
+    color:#8b5cf6;
+    margin-top:6px;
+}
+.order-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+.order-item{
+    padding:23px;
+    border-radius:19px;
+    background:#faf7ff;
+}
+.order-item h3{
+    color:#713f8d;
+    margin-bottom:9px;
+}
+.tip-options{
+    margin:25px 0;
+    padding:21px;
+    background:#faf7ff;
+    border-radius:16px;
+}
+.tip-options label{
+    display:inline-flex;
+    margin-right:25px;
+    font-weight:500;
+}
+.tip-options input{
+    width:auto;
+    margin:0 7px 0 0;
+}
+.price-result{
+    margin-top:23px;
+    padding:27px;
+    border-radius:20px;
+    text-align:center;
+    font-size:29px;
+    font-weight:850;
+    color:#51366b;
+    background:#f1ebff;
+}
+footer{
+    text-align:center;
+    color:white;
+    margin-top:50px;
+    line-height:1.9;
+}
+@media(max-width:700px){
+    header h1{
+        font-size:31px;
+    }
+    .container{
+        width:94%;
+    }
+    .card{
+        padding:23px;
+    }
+    .two-box,
+    .budget-box,
+    .product-grid,
+    .order-grid{
+        grid-template-columns:1fr;
+    }
+    .routine-count{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🌸</div>
+<h1>Glow Beauty</h1>
+<p>Skincare & Beauty Blog • JavaScript DOM & Events Lab</p>
+</header>
+
+<div class="container">
+
+<!-- QUESTION 1 -->
+<div class="card">
+<div class="card-header">
+<div class="number">1</div>
+<h2>💄 Beauty Product Name Analyzer</h2>
+</div>
+
+<p class="description">
+Enter beauty or skincare product names in a sentence to find the shortest and longest product name.
+</p>
+
+<input type="text" id="sentence"
+value="Face Serum Moisturizer Sunscreen">
+
+<button onclick="findWords()">🔍 Analyze Products</button>
+
+<div class="result" id="result">
+Result will appear here...
+</div>
+</div>
+
+<!-- QUESTION 2 -->
+<div class="card">
+<div class="card-header">
+<div class="number">2</div>
+<h2>🧴 Skin Moisture Calculator</h2>
+</div>
+
+<p class="description">
+Enter your skin hydration percentage to identify your basic skin condition and get a skincare suggestion.
+</p>
+
+<div class="two-box">
+
+<div>
+<label>Skin Hydration (%)</label>
+<input type="number" id="hydration" placeholder="Example: 65">
+</div>
+
+<div>
+<label>Daily Water Intake (Litres)</label>
+<input type="number" id="water" placeholder="Example: 2">
+</div>
+
+</div>
+
+<button onclick="calculateSkin()">✨ Check Skin Condition</button>
+
+<div class="skin-result">
+<div>Skin Hydration</div>
+<div class="skin-number" id="score">--</div>
+<div class="skin-type" id="type">
+Enter your details
+</div>
+</div>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="card">
+<div class="card-header">
+<div class="number">3</div>
+<h2>🌸 Beauty Product Collection</h2>
+</div>
+
+<p class="description">
+Enter rows and columns to create your personalized beauty product collection.
+</p>
+
+<div class="two-box">
+
+<div>
+<label>Number of Rows</label>
+<input type="number" id="rows" placeholder="Example: 3">
+</div>
+
+<div>
+<label>Number of Columns</label>
+<input type="number" id="columns" placeholder="Example: 4">
+</div>
+
+</div>
+
+<button onclick="grow()">🌷 Create Collection</button>
+
+<div id="garden">
+Your beauty collection will appear here ✨
+</div>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="card">
+<div class="card-header">
+<div class="number">4</div>
+<h2>💰 Skincare Budget Converter</h2>
+</div>
+
+<p class="description">
+Convert your skincare budget between Indian Rupees and US Dollars.
+</p>
+
+<input type="number" id="data" placeholder="Enter budget amount">
+
+<div class="budget-box">
+
+<div>
+<label>From</label>
+<select id="from">
+<option value="INR">🇮🇳 Indian Rupee</option>
+<option value="USD">🇺🇸 US Dollar</option>
+</select>
+</div>
+
+<div>
+<label>To</label>
+<select id="to">
+<option value="USD">🇺🇸 US Dollar</option>
+<option value="INR">🇮🇳 Indian Rupee</option>
+</select>
+</div>
+
+</div>
+
+<button onclick="convert()">💱 Convert Budget</button>
+
+<div class="budget-result">
+<span id="answer">Result</span>
+</div>
+</div>
+
+<!-- QUESTION 5 -->
+<div class="card">
+<div class="card-header">
+<div class="number">5</div>
+<h2>✨ Skincare Routine Picker</h2>
+</div>
+
+<p class="description">
+Click the button to randomly select a skincare routine and keep track of your routine choices.
+</p>
+
+<div class="routine-area">
+
+<div class="routine-icon" id="routineIcon">
+🧴
+</div>
+
+<button id="flip">✨ Choose Routine</button>
+
+<div class="routine-result" id="routine">
+Your skincare routine will appear here...
+</div>
+
+<div class="routine-count">
+
+<div class="count-box">
+🌞 Morning
+<span id="num_morning">0</span>
+</div>
+
+<div class="count-box">
+🌙 Night
+<span id="num_night">0</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- QUESTION 6 -->
+<div class="card">
+<div class="card-header">
+<div class="number">6</div>
+<h2>🛍️ Beauty Product Order Calculator</h2>
+</div>
+
+<p class="description">
+Select the quantity of skincare products and calculate the final order price including 9% tax and tip.
+</p>
+
+<div class="order-grid">
+
+<div class="order-item">
+<h3>🧴 Face Serum</h3>
+<p>₹500 each</p>
+<input type="number" id="small" value="0" min="0">
+</div>
+
+<div class="order-item">
+<h3>💧 Moisturizer</h3>
+<p>₹350 each</p>
+<input type="number" id="medium" value="0" min="0">
+</div>
+
+<div class="order-item">
+<h3>☀️ Sunscreen</h3>
+<p>₹450 each</p>
+<input type="number" id="large" value="0" min="0">
+</div>
+
+</div>
+
+<div class="tip-options">
+
+<strong>💜 Select Discount:</strong>
+<br><br>
+
+<label>
+<input type="radio" value="10" name="tip">
+10%
+</label>
+
+<label>
+<input type="radio" value="15" name="tip" checked>
+15%
+</label>
+
+<label>
+<input type="radio" value="20" name="tip">
+20%
+</label>
+
+</div>
+
+<button id="submit">🧾 Calculate Order</button>
+
+<div class="price-result">
+Total:
+<span id="price">₹0.00</span>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<p>🌸 Glow Beauty - Skincare & Beauty Blog</p>
+<p>JavaScript DOM & Events Laboratory</p>
+<p>💜 Learn • Glow • Care</p>
+</footer>
+
+<script>
+
+/* QUESTION 1
+   Beauty Product Name Analyzer
+*/
+
+function findWords(){
+
+var str=document.getElementById("sentence").value;
+
+if(str.trim()===""){
+
+document.getElementById("result").innerHTML=
+"⚠️ Please enter some beauty product names.";
+
+return;
+
+}
+
+var words=str.trim().split(/\s+/);
+
+var shortest=words[0];
+
+var longest=words[0];
+
+for(var i=1;i<words.length;i++){
+
+if(words[i].length<shortest.length){
+
+shortest=words[i];
+
+}
+
+if(words[i].length>longest.length){
+
+longest=words[i];
+
+}
+
+}
+
+document.getElementById("result").innerHTML=
+"🌸 Shortest Product Name: "+shortest+
+"<br>✨ Longest Product Name: "+longest;
+
+}
+
+
+/* QUESTION 2
+   Skin Moisture Calculator
+*/
+
+function calculateSkin(){
+
+var hydration=
+parseFloat(document.getElementById("hydration").value);
+
+var water=
+parseFloat(document.getElementById("water").value);
+
+if(isNaN(hydration)||isNaN(water)||
+hydration<=0||water<=0){
+
+document.getElementById("score").innerHTML="--";
+
+document.getElementById("type").innerHTML=
+"Please enter valid values";
+
+return;
+
+}
+
+document.getElementById("score").innerHTML=
+hydration+"%";
+
+var type;
+
+if(hydration<30){
+
+type="Very Dry Skin 💧";
+
+}
+
+else if(hydration>=30&&hydration<50){
+
+type="Dry Skin 🌵";
+
+}
+
+else if(hydration>=50&&hydration<70){
+
+type="Balanced Skin 🌸";
+
+}
+
+else{
+
+type="Well Hydrated Skin ✨";
+
+}
+
+document.getElementById("type").innerHTML=type+
+"<br><small>Water Intake: "+water+" L/day</small>";
+
+}
+
+
+/* QUESTION 3
+   Beauty Product Collection
+*/
+
+function grow(){
+
+var rows=
+parseInt(document.getElementById("rows").value);
+
+var columns=
+parseInt(document.getElementById("columns").value);
+
+var garden=
+document.getElementById("garden");
+
+if(isNaN(rows)||isNaN(columns)||
+rows<=0||columns<=0){
+
+garden.innerHTML=
+"<p>⚠️ Enter valid rows and columns first!</p>";
+
+return;
+
+}
+
+var products=[
+"🧴",
+"💄",
+"🌸",
+"🧼",
+"☀️",
+"💧"
+];
+
+garden.innerHTML="";
+
+for(var i=0;i<rows;i++){
+
+for(var j=0;j<columns;j++){
+
+var number=
+Math.floor(Math.random()*products.length);
+
+garden.innerHTML+=
+'<span style="font-size:50px;margin:10px;display:inline-block;">'+
+products[number]+
+'</span>';
+
+}
+
+garden.innerHTML+="<br>";
+
+}
+
+}
+
+
+/* QUESTION 4
+   Skincare Budget Converter
+*/
+
+function convert(){
+
+var data=
+parseFloat(document.getElementById("data").value);
+
+var from=
+document.getElementById("from").value;
+
+var to=
+document.getElementById("to").value;
+
+if(isNaN(data)){
+
+document.getElementById("answer").innerHTML=
+"⚠️ Enter a budget amount";
+
+return;
+
+}
+
+var answer;
+
+if(from=="INR"&&to=="USD"){
+
+answer=data*0.012;
+
+document.getElementById("answer").innerHTML=
+"🇺🇸 $"+answer.toFixed(2);
+
+}
+
+else if(from=="USD"&&to=="INR"){
+
+answer=data*83.00;
+
+document.getElementById("answer").innerHTML=
+"🇮🇳 ₹"+answer.toFixed(2);
+
+}
+
+else{
+
+document.getElementById("answer").innerHTML=
+"₹"+data.toFixed(2);
+
+}
+
+}
+
+
+/* QUESTION 5
+   Skincare Routine Picker
+*/
+
+var morning=0;
+
+var night=0;
+
+document.getElementById("flip")
+.addEventListener("click",routineFunction);
+
+function routineFunction(){
+
+var number=
+Math.floor(Math.random()*2);
+
+var routineIcon=
+document.getElementById("routineIcon");
+
+routineIcon.style.transform=
+"scale(1.3) rotate(10deg)";
+
+setTimeout(function(){
+
+routineIcon.style.transform=
+"scale(1) rotate(0deg)";
+
+if(number==0){
+
+routineIcon.innerHTML="☀️";
+
+document.getElementById("routine").innerHTML=
+"🌞 Morning Routine:<br>"+
+"Cleanser → Vitamin C Serum → Moisturizer → Sunscreen";
+
+morning++;
+
+}
+
+else{
+
+routineIcon.innerHTML="🌙";
+
+document.getElementById("routine").innerHTML=
+"🌙 Night Routine:<br>"+
+"Cleanser → Serum → Moisturizer → Lip Care";
+
+night++;
+
+}
+
+document.getElementById("num_morning").innerHTML=
+morning;
+
+document.getElementById("num_night").innerHTML=
+night;
+
+},250);
+
+}
+
+
+/* QUESTION 6
+   Beauty Product Order Calculator
+*/
+
+document.getElementById("submit")
+.addEventListener("click",calculateOrder);
+
+function calculateOrder(){
+
+var serum=
+parseInt(document.getElementById("small").value)||0;
+
+var moisturizer=
+parseInt(document.getElementById("medium").value)||0;
+
+var sunscreen=
+parseInt(document.getElementById("large").value)||0;
+
+var serumCost=
+serum*500;
+
+var moisturizerCost=
+moisturizer*350;
+
+var sunscreenCost=
+sunscreen*450;
+
+var total=
+serumCost+
+moisturizerCost+
+sunscreenCost;
+
+var tax=
+total*0.09;
+
+var totalWithTax=
+total+tax;
+
+var selectedTip=
+document.querySelector(
+'input[name="tip"]:checked'
+);
+
+var tip=
+parseFloat(selectedTip.value);
+
+var discount=
+totalWithTax*tip/100;
+
+var finalPrice=
+totalWithTax-discount;
+
+document.getElementById("price").innerHTML=
+"₹"+finalPrice.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
