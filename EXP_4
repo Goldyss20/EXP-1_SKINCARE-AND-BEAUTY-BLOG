@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Beauty - Beauty & Skincare Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',Arial,sans-serif;
+    background:linear-gradient(135deg,#FFF0F5,#FFE4EC,#FFD1DC);
+    color:#333;
+    line-height:1.8;
+}
+
+/* Header */
+
+header{
+    background:linear-gradient(90deg,#FFC0CB,#FFD6E7,#FFE4EC);
+    padding:40px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+header h1{
+    color:#C2185B;
+    font-size:48px;
+    letter-spacing:4px;
+    text-shadow:3px 3px 8px white;
+    font-style:italic;
+}
+
+header p{
+    margin-top:10px;
+    font-size:20px;
+    color:#880E4F;
+}
+
+/* Navigation */
+
+nav{
+    background:#fff;
+    text-align:center;
+    padding:18px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    display:inline-block;
+    text-decoration:none;
+    color:#880E4F;
+    padding:10px 20px;
+    margin:0 10px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+nav a:link{
+    background:#FFF0F5;
+}
+
+nav a:visited{
+    background:#F8BBD0;
+}
+
+nav a:hover{
+    background:#C2185B;
+    color:white;
+    transform:translateY(-3px);
+}
+
+nav a:active{
+    background:#FF4081;
+}
+
+/* Sections */
+
+section{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    padding:35px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+/* Headings */
+
+h2{
+    color:#C2185B;
+    font-size:34px;
+    letter-spacing:2px;
+    margin-bottom:25px;
+    text-shadow:2px 2px 6px pink;
+}
+
+h3{
+    color:#880E4F;
+    font-size:24px;
+    margin:20px 0;
+}
+
+/* Paragraph */
+
+p{
+    font-size:18px;
+    margin:15px auto;
+    width:90%;
+    text-align:center;
+}
+
+/* About */
+
+#about p{
+    width:95%;
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#about img{
+    display:block;
+    margin:auto;
+    border-radius:15px;
+}
+
+/* Links */
+
+section a{
+    color:#C2185B;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section a:hover{
+    color:red;
+    text-decoration:underline;
+}
+
+/* Table */
+
+table{
+    width:90%;
+    margin:auto;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+th{
+    background:#F8BBD0;
+    color:#880E4F;
+    font-size:20px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:15px;
+    text-align:center;
+}
+
+/* Description List */
+
+dl{
+    width:80%;
+    margin:auto;
+}
+
+dt{
+    color:#C2185B;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+dd{
+    margin-bottom:12px;
+}
+
+/* Gallery */
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.gallery img{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.08);
+    box-shadow:0 12px 25px rgba(194,24,91,.4);
+}
+
+.gallery b{
+    display:block;
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* Multi-column Layout */
+
+.tip{
+    column-count:2;
+    column-gap:40px;
+    column-rule:2px solid #F8BBD0;
+    width:90%;
+    margin:auto;
+    font-size:18px;
+    text-align:left;
+}
+
+/* List */
+
+.ingredients{
+    width:60%;
+    margin:auto;
+}
+
+.ingredients ul{
+    list-style-type:circle;
+    text-align:left;
+    font-size:18px;
+    line-height:2;
+}
+
+/* Form */
+
+form{
+    width:800px;
+    max-width:95%;
+    margin:auto;
+}
+
+fieldset{
+    border:2px solid #F8BBD0;
+    border-radius:20px;
+    padding:30px;
+    background:#FFF8FB;
+}
+
+legend{
+    color:#C2185B;
+    font-size:28px;
+    font-weight:bold;
+}
+
+form table{
+    width:100%;
+}
+
+form td{
+    padding:12px;
+}
+
+form td:first-child{
+    width:35%;
+    text-align:right;
+    font-weight:bold;
+}
+
+input,
+textarea,
+select{
+    width:95%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    outline:none;
+    border:2px solid #C2185B;
+}
+
+input[type=radio],
+input[type=checkbox]{
+    width:auto;
+}
+
+input[type=submit],
+input[type=reset],
+button{
+    width:140px;
+    padding:12px;
+    background:#C2185B;
+    color:white;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.4s;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover,
+button:hover{
+    background:#880E4F;
+    transform:scale(1.05);
+}
+
+/* Media */
+
+audio,
+video,
+iframe,
+embed{
+    display:block;
+    margin:25px auto;
+}
+
+/* Footer */
+
+footer{
+    background:#C2185B;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+section{
+    width:95%;
+    padding:20px;
+}
+
+.gallery{
+    flex-direction:column;
+    align-items:center;
+}
+
+.tip{
+    column-count:1;
+}
+
+form{
+    width:100%;
+}
+
+h1{
+    font-size:36px;
+}
+
+h2{
+    font-size:28px;
+}
+
+}
+/* Margin */
+#about p{
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:40px;
+    margin-right:40px;
+}
+
+/* Padding */
+section{
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+/* Text */
+h1{
+    letter-spacing:4px;
+    text-shadow:3px 3px 8px pink;
+}
+
+/* Font */
+h2{
+    font-style:italic;
+}
+
+/* Background */
+body{
+    background-image:url("images/bg.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+/* Links */
+a:link{
+    background-color:yellow;
+}
+
+a:visited{
+    background-color:cyan;
+}
+
+a:hover{
+    background-color:lightgreen;
+}
+
+a:active{
+    background-color:hotpink;
+}
+
+/* Display */
+.inline{
+    display:inline;
+}
+
+/* List */
+ul{
+    list-style-type:circle;
+}
+
+/* Multi Column Layout */
+.tip{
+    column-count:2;
+    column-gap:30px;
+    column-rule:2px solid pink;
+
+}
+</style>
+</head>
+
+<body bgcolor="#FFF0F5">
+<!-- Header -->
+<center>
+<div align="center">
+
+
+<h1>
+Glow Beauty </h1>
+</h1>
+
+</div>
+
+
+<!-- Navigation -->
+<nav>
+<center>
+
+<b>
+<a href="#top">HOME</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#about">ABOUT</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#tips">SKINCARE TIPS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#products">PRODUCTS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+ <a href="#contact">CONTACT</a>
+ <li><a href="#signin">Login</a></li>
+</b>
+
+</center>
+</nav>
+
+
+</center>
+
+<!-- About -->
+<center>
+<section id="about">
+    <center>
+
+<h2>Our Blog</h2>
+
+<table width="75%" align="center">
+<tr>
+<td align="justify">
+
+<p>
+Welcome to <b>Glow Beauty &amp; Skincare Blog</b>, your trusted destination for skincare,
+beauty, and self-care tips. We believe that healthy, glowing skin is achieved through
+the perfect combination of a proper skincare routine, balanced nutrition, regular
+exercise, adequate sleep, and a positive lifestyle.
+</p>
+
+<p>
+In addition to skincare, we also share wellness tips because healthy skin starts from
+within. Staying hydrated, eating a balanced diet, exercising regularly, getting enough
+sleep, and managing stress all contribute to a naturally glowing complexion.
+</p>
+
+<p>
+Our blog covers daily skincare routines, seasonal skincare advice, anti-aging tips,
+acne prevention, sun protection, makeup essentials, and healthy lifestyle practices.
+Whether you have dry, oily, combination, or sensitive skin, we provide practical
+guidance to help you choose products that suit your skin type.
+</p>
+
+<p>
+We also explore the benefits of natural ingredients such as <b>Aloe Vera, Honey,
+Turmeric, Green Tea, Rose Water, Vitamin C, and Aloe Extracts</b>. These ingredients
+are known for their nourishing, soothing, and antioxidant properties that help improve
+skin texture and maintain a youthful appearance.
+</p>
+
+<p>
+Our mission is to inspire confidence by educating readers about skincare products,
+healthy habits, and beauty trends. From beginners to skincare enthusiasts, our blog
+offers reliable information to help everyone build a simple, effective, and affordable
+beauty routine for naturally radiant skin.
+</p>
+
+</td>
+</tr>
+</table>
+</center>
+</section>
+
+
+</center>
+
+<!-- Useful Links -->
+<center>
+
+<section>
+
+<h2>Useful Links</h2>
+<p>
+External Website:
+<a href="https://www.nivea.com" target="_blank">Visit NIVEA</a>
+</p>
+
+<p>
+Internal Link:
+<a href="#tips">Go to Skincare Tips</a>
+</p>
+
+<p>
+Email:
+<a href="mailto:glowbeauty@gmail.com">glowbeauty@gmail.com</a>
+</p>
+
+<p>
+Phone:
+<a href="tel:+917598472611">+91 7598472611</a>
+</p>
+
+<p><b>Clickable Image to Visit Sephora</b></p>
+
+<a href="https://www.sephora.com" target="_blank">
+    <img src="images\gallery2.jpg" alt="Beauty Products" width="250">
+</a>
+
+</section>
+
+
+</center>
+
+<!-- Products -->
+<center>
+<section id="products">
+
+<h2>Popular Skincare Products</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+
+<tr>
+<th>Product</th>
+<th>Skin Type</th>
+<th>Benefit</th>
+</tr>
+
+<tr>
+<td>Cleanser</td>
+<td>All Skin Types</td>
+<td>Removes Dirt & Oil</td>
+</tr>
+
+<tr>
+<td>Vitamin C Serum</td>
+<td>Normal/Dry</td>
+<td>Brightens Skin</td>
+</tr>
+
+<tr>
+<td>Moisturizer</td>
+<td>Dry Skin</td>
+<td>Hydration</td>
+</tr>
+
+<tr>
+<td>Sunscreen SPF 50</td>
+<td>All Skin Types</td>
+<td>UV Protection</td>
+</tr>
+
+</table>
+
+</section>
+
+</center>
+
+
+<!-- Skincare Routine -->
+<center>
+<section id="tips">
+
+<h2> Daily Skincare Routine </h2>
+
+<p>Follow these simple steps every day for healthy and glowing skin.</p>
+
+<center>
+
+<h3> Morning Routine</h3>
+
+<p>1. Cleanser</p>
+<p>2. Toner</p>
+<p>3. Vitamin C Serum</p>
+<p>4. Moisturizer</p>
+<p>5. Sunscreen</p>
+
+<h3> Night Routine</h3>
+
+<p>1. Cleanser</p>
+<p>2. Serum</p>
+<p>3. Night Cream</p>
+
+</center>
+</section>
+
+
+</center>
+<!-- Beauty Gallery Section -->
+
+<center>
+
+<h2> Beauty Gallery </h2>
+
+<p>Explore some of our favorite skincare and beauty inspirations.</p>
+
+<table cellpadding="10">
+    <tr>
+        <td align="center">
+            <img src="images\serum.jpg" alt="Serum" width="200"><br>
+            <b>SERUM</b>
+        </td>
+
+        <td align="center">
+            <img src="images\wash.jpg" alt="Face Wash" width="200"><br>
+            <b>Face Wash</b>
+        </td>
+
+        <td align="center">
+            <img src="images\moist.jpg" alt="Moisturizer" width="200"><br>
+            <b>Moisturizer</b>
+        </td>
+
+        <td align="center">
+            <img src="images\sun.jpg" alt="Sun Screen" width="200"><br>
+            <b>Sunscreen SPF 50</b>
+        </td>
+        <td align="center">
+            <img src="images\lip.jpg" alt="Lip Balm" width="200"><br>
+            <b>Lip Balm</b>
+        </td>
+    </tr>
+</table>
+
+</center>
+
+<!-- Quick Tips -->
+<center>
+
+<h2>Quick Beauty Tips</h2>
+
+<p> Drink at least 8 glasses of water daily.</p>
+
+<p> Always wear sunscreen before stepping outside.</p>
+
+<p> Eat fresh fruits and vegetables for healthy skin.</p>
+
+
+
+</center>
+
+<!-- Natural Ingredients -->
+<center>
+
+<h2>Natural Ingredients</h2>
+<table cellpadding="10">
+    <tr>
+        <td align="center">
+            <img src="images\honey.jpg" alt="Honey" width="200"><br>
+            <b>HONEY</b>
+        </td>
+
+        <td align="center">
+            <img src="images\turmeric.jpg" alt="Turmeric Powder" width="200"><br>
+            <b>TURMERIC POWDER</b>
+        </td>
+
+        <td align="center">
+            <img src="images\aloevera.jpg" alt="Aloe Vera" width="200"><br>
+            <b>ALOE VERA</b>
+        </td>
+
+        <td align="center">
+            <img src="images\r.jpg" alt="Rice Water" width="200"><br>
+            <b>RICE WATER</b>
+        </td>
+        <td align="center">
+            <img src="images\sand.jpg" alt="Sandal Wood" width="200"><br>
+            <b>SANDAL WOOD</b>
+        </td>
+    </tr>
+</table>
+
+</center>
+<!-- Media Section -->
+
+<section>
+
+<h2>Beauty Media</h2>
+
+<h3>Beauty Audio</h3>
+
+<audio controls>
+<source src="C:\Users\ssgol\OneDrive\Documents\BEAUTY BLOG\3763974-uhd_2160_3840_25fps.mp4" type="audio/mpeg">
+Your browser does not support audio.
+</audio>
+
+<h3>Beauty Video</h3>
+
+<video width="500" controls>
+<source src="C:\Users\ssgol\OneDrive\Documents\BEAUTY BLOG\3763974-uhd_2160_3840_25fps.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+
+<h3>Embedded PDF</h3>
+<embed src="C:\Users\ssgol\OneDrive\Documents\BEAUTY BLOG\skincare.pdf"
+width="500"
+height="350">
+
+<h3>Beauty YouTube Video</h3>
+
+<h2>Beauty Store Location</h2>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15791.82042602436!2d77.20933304416154!3d8.307260367647295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b045516f27e1797%3A0x9eaf4bffb1fa19c1!2sMarthandam%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1785992791279!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</section>
+<center>
+
+<h2>Beauty Consultation Form </h2>
+
+<form action="#" method="post">
+
+<fieldset>
+
+<legend>Personal Details</legend>
+
+<div>
+
+<table cellpadding="8">
+<tr>
+<td align="right"><label>Name :</label></td>
+<td><input type="text" placeholder="Enter your name"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Email :</label></td>
+<td><input type="email" placeholder="Enter your email"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Password :</label></td>
+<td><input type="password"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Phone :</label></td>
+<td><input type="tel" placeholder="9876543210"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Age :</label></td>
+<td><input type="number"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Date of Visit :</label></td>
+<td><input type="date"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Appointment Time :</label></td>
+<td><input type="time"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Preferred Month :</label></td>
+<td><input type="month"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Preferred Week :</label></td>
+<td><input type="week"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Website :</label></td>
+<td><input type="url" placeholder="https://"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Search Product :</label></td>
+<td><input type="search"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Upload Report :</label></td>
+<td><input type="file"></td>
+</tr>
+
+<tr>
+<td align="right"><label>Skin Type :</label></td>
+<td>
+<select>
+<option>Normal</option>
+<option>Dry</option>
+<option>Oily</option>
+<option>Combination</option>
+<option>Sensitive</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right"><label>Gender :</label></td>
+<td>
+<input type="radio" name="g"> Male
+<input type="radio" name="g"> Female
+<input type="radio" name="g"> Other
+</td>
+</tr>
+
+<tr>
+<td align="right"><label>Skin Concern :</label></td>
+<td>
+<input type="checkbox"> Acne
+<input type="checkbox"> Dryness
+<input type="checkbox"> Pigmentation
+</td>
+</tr>
+
+<tr>
+<td align="right"><label>Beauty Goals :</label></td>
+<td>
+<textarea rows="4" cols="25"></textarea>
+</td>
+</tr>
+
+<tr>
+<td align="right"><label>Satisfaction :</label></td>
+<td>
+<input type="range" min="0" max="100">
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Clear">
+<button type="button">Book Consultation</button>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+</fieldset>
+
+</form>
+
+</center>
+<!-- Contact -->
+<center>
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<p>We'd love to hear your skincare journey!</p>
+
+<p>
+Email:
+<a href="mailto:glowbeauty@gmail.com">glowbeauty@gmail.com</a>
+</p>
+
+<p>
+Phone:
+<a href="tel:+917598472611">+91 7598472611</a>
+</p>
+
+</section>
+
+
+
+<footer>
+<p>&copy; 2026 Glow Beauty & Skincare Blog |Designed By GOLDY </p>
+</footer>
+
+</center>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(37, 117, 252, 0.85),
+                    rgba(106, 17, 203, 0.85)
+                ),
+                url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        /* Main Card */
+
+        .login-card {
+
+            width: 430px;
+
+            background:
+                rgba(255, 255, 255, 0.97);
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.3);
+
+            text-align: center;
+
+        }
+
+
+        /* Icon */
+
+        .login-icon {
+
+            width: 80px;
+
+            height: 80px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6a11cb,
+                    #2575fc
+                );
+
+            color: white;
+
+            font-size: 35px;
+
+        }
+
+
+        /* Heading */
+
+        .login-card h1 {
+
+            font-size: 32px;
+
+            color: #222;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .subtitle {
+
+            color: #777;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* Input */
+
+        .input-group {
+
+            text-align: left;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .input-group label {
+
+            display: block;
+
+            font-weight: bold;
+
+            color: #444;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .input-group input {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .input-group input:focus {
+
+            border-color: #6a11cb;
+
+            box-shadow:
+                0 0 8px
+                rgba(106, 17, 203, 0.2);
+
+        }
+
+
+        /* Login Button */
+
+        .login-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6a11cb,
+                    #2575fc
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .login-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 15px
+                rgba(37, 117, 252, 0.3);
+
+        }
+
+
+        /* Bottom */
+
+        .bottom-text {
+
+            margin-top: 25px;
+
+            color: #777;
+
+        }
+
+
+        .bottom-text a {
+
+            color: #2575fc;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        .bottom-text a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* Divider */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin: 25px 0;
+
+            color: #aaa;
+
+            font-size: 13px;
+
+        }
+
+
+        .divider::before,
+        .divider::after {
+
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #ddd;
+
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 500px) {
+
+            .login-card {
+
+                width: 90%;
+
+                padding: 30px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="login-card">
+
+
+        <div class="login-icon">
+            🔐
+        </div>
+
+
+        <h1>Welcome Back!</h1>
+
+
+        <p class="subtitle">
+            Sign in to continue to your website
+        </p>
+
+
+        <form action="index.html">
+
+
+            <div class="input-group">
+
+                <label>Email or Username</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your email or username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="login-btn"
+                type="submit">
+
+                Sign In →
+
+            </button>
+
+
+        </form>
+
+
+        <div class="divider">
+            OR
+        </div>
+
+
+        <p class="bottom-text">
+
+            Don't have an account?
+
+            <a href="signup.html">
+                Create Account
+            </a>
+
+        </p>
+
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(37, 117, 252, 0.85),
+                    rgba(106, 17, 203, 0.85)
+                ),
+                url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* Main Card */
+
+        .card {
+
+            width: 900px;
+            min-height: 550px;
+
+            display: flex;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* Left Side */
+
+        .welcome {
+
+            width: 45%;
+
+            padding: 55px 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6a11cb,
+                    #2575fc
+                );
+        }
+
+
+        .welcome h1 {
+
+            font-size: 42px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .welcome p {
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+
+        .welcome .icon {
+
+            font-size: 60px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* Right Side */
+
+        .form-area {
+
+            width: 55%;
+
+            padding: 45px 55px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .form-area h2 {
+
+            font-size: 32px;
+
+            color: #222;
+
+            margin-bottom: 8px;
+        }
+
+
+        .subtitle {
+
+            color: #777;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* Input Group */
+
+        .input-group {
+
+            margin-bottom: 18px;
+        }
+
+
+        .input-group label {
+
+            display: block;
+
+            font-weight: bold;
+
+            color: #444;
+
+            margin-bottom: 7px;
+        }
+
+
+        .input-group input {
+
+            width: 100%;
+
+            padding: 13px 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        .input-group input:focus {
+
+            border-color: #6a11cb;
+
+            box-shadow:
+                0 0 8px
+                rgba(106, 17, 203, 0.2);
+        }
+
+
+        /* Button */
+
+        .btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6a11cb,
+                    #2575fc
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            margin-top: 5px;
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 15px
+                rgba(37, 117, 252, 0.3);
+        }
+
+
+        /* Bottom Text */
+
+        .bottom-text {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #777;
+        }
+
+
+        .bottom-text a {
+
+            color: #2575fc;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+        .bottom-text a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .card {
+
+                width: 90%;
+
+                flex-direction: column;
+            }
+
+            .welcome {
+
+                width: 100%;
+
+                padding: 35px;
+
+                text-align: center;
+            }
+
+            .form-area {
+
+                width: 100%;
+
+                padding: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="card">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="welcome">
+
+            <div class="icon">✨</div>
+
+            <h1>Welcome!</h1>
+
+            <p>
+                Create your account and discover
+                everything our website has to offer.
+            </p>
+
+            <p>
+                Already have an account?
+                Sign in after creating your account.
+            </p>
+
+        </div>
+
+
+        <!-- SIGN UP FORM -->
+
+        <div class="form-area">
+
+            <h2>Create Account</h2>
+
+            <p class="subtitle">
+                Join us today. It only takes a minute.
+            </p>
+
+
+            <form action="signin.html">
+
+
+                <div class="input-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Confirm Password</label>
+
+                    <input
+                        type="password"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                </div>
+
+
+                <button class="btn" type="submit">
+                    Create Account →
+                </button>
+
+
+            </form>
+
+
+            <p class="bottom-text">
+
+                Already have an account?
+
+                <a href="signin.html">
+                    Sign In
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
